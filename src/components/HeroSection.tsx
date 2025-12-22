@@ -51,14 +51,6 @@ const HeroSection = () => {
           />
         </div>
 
-        {/* Arabic Text */}
-        <p
-          className="text-2xl md:text-3xl text-primary font-medium mb-4 fade-in-up"
-          style={{ animationDelay: "0.3s" }}
-        >
-          سحور
-        </p>
-
         {/* Main Title */}
         <h1
           className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-4 fade-in-up"
