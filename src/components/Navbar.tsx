@@ -18,17 +18,12 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = isHomePage
-    ? [
-        { href: "#about", label: "About", isAnchor: true },
-        { href: "#features", label: "Experience", isAnchor: true },
-        { href: "/vendors", label: "Vendors", isAnchor: false },
-        { href: "#info", label: "Event Info", isAnchor: true },
-      ]
-    : [
-        { href: "/", label: "Home", isAnchor: false },
-        { href: "/vendors", label: "Vendors", isAnchor: false },
-      ];
+  const navLinks = [
+    { href: "/#about", label: "About", isAnchor: isHomePage },
+    { href: "/#features", label: "Experience", isAnchor: isHomePage },
+    { href: "/vendors", label: "Vendors", isAnchor: false },
+    { href: "/#info", label: "Event Info", isAnchor: isHomePage },
+  ];
 
   return (
     <nav
