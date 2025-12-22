@@ -73,7 +73,7 @@ const Footer = () => {
             </h4>
             <div className="flex gap-4 justify-center md:justify-end mb-4">
               <a
-                href="https://instagram.com/socalsuhoorfest"
+                href="https://www.instagram.com/socalsuhoorfest/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all duration-300"
