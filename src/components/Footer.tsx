@@ -15,12 +15,9 @@ const Footer = () => {
                 alt="SoCal Suhoor Fest"
                 className="w-12 h-12 rounded-full border-2 border-primary/30"
               />
-              <div>
-                <h4 className="font-display font-bold text-lg text-foreground">
-                  SoCal Suhoor Fest
-                </h4>
-                <p className="text-sm text-muted-foreground">سحور</p>
-              </div>
+              <h4 className="font-display font-bold text-lg text-foreground">
+                SoCal Suhoor Fest
+              </h4>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Southern California's premier Ramadan festival, bringing together
