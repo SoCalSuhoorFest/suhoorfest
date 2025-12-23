@@ -22,10 +22,10 @@ const AboutSection = () => {
             <span className="text-gradient-gold">Celebration</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            The SoCal Suhoor Fest is a vibrant celebration of Ramadan, bringing
-            together families and friends under the stars for the blessed
-            pre-dawn meal. Experience the warmth of Islamic hospitality with
-            halal food, entertainment, shopping, and community connection.
+            The SoCal Suhoor Fest brings together families and friends under the
+            stars for the blessed pre-dawn meal. Experience the warmth of
+            Islamic hospitality with halal food, entertainment, shopping, and
+            community connection.
           </p>
         </div>
 
