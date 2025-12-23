@@ -66,9 +66,9 @@ const AboutSection = () => {
               <Moon className="w-7 h-7 text-primary" />
             </div>
             <div className="text-3xl md:text-4xl font-display font-bold text-gradient-gold mb-2">
-              1
+              3
             </div>
-            <p className="text-muted-foreground text-sm">Magical Night</p>
+            <p className="text-muted-foreground text-sm">Magical Nights</p>
           </div>
 
           <div className="text-center p-6 bg-card/50 rounded-2xl border border-primary/10 hover:border-primary/30 transition-all duration-300">
