@@ -1,9 +1,9 @@
 import californiaSmileLogo from "@/assets/sponsors/california-smile.webp";
 import cairCaliforniaLogo from "@/assets/sponsors/cair-california.svg";
-import islamicReliefLogo from "@/assets/sponsors/islamic-relief.webp";
+import islamicReliefLogo from "@/assets/sponsors/islamic-relief.png";
 import assurixsLogo from "@/assets/sponsors/assurixs.webp";
-import pennyAppealLogo from "@/assets/sponsors/penny-appeal.png";
-import syrianForumLogo from "@/assets/sponsors/syrian-forum.jpg";
+import pennyAppealLogo from "@/assets/sponsors/penny-appeal.jpg";
+import syrianForumLogo from "@/assets/sponsors/syrian-forum.png";
 
 const sponsors = [
   { name: "California Smile Dental Group", logo: californiaSmileLogo },
