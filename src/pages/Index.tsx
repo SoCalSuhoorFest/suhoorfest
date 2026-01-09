@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import CountdownTimer from "@/components/CountdownTimer";
 import AboutSection from "@/components/AboutSection";
+import VideoSection from "@/components/VideoSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import SponsorsSection from "@/components/SponsorsSection";
 import EventInfoSection from "@/components/EventInfoSection";
@@ -30,6 +31,7 @@ const Index = () => {
           <HeroSection />
           <CountdownTimer />
           <AboutSection />
+          <VideoSection />
           <FeaturesSection />
           <SponsorsSection />
           <EventInfoSection />
