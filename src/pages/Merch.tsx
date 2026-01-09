@@ -4,46 +4,43 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Star, ShoppingBag, ExternalLink } from "lucide-react";
 
+import merchTshirt from "@/assets/merch-tshirt.jpg";
+import merchHoodie from "@/assets/merch-hoodie.jpg";
+import merchCap from "@/assets/merch-cap.jpg";
+import merchTote from "@/assets/merch-tote.jpg";
+
 const merchItems = [
   {
     name: "Suhoor Fest T-Shirt",
     price: "$25",
     description: "Classic festival tee with 2026 logo",
     tag: "Best Seller",
+    image: merchTshirt,
   },
   {
     name: "Premium Hoodie",
     price: "$45",
     description: "Cozy hoodie perfect for late nights",
     tag: null,
+    image: merchHoodie,
   },
   {
     name: "Festival Cap",
     price: "$20",
     description: "Embroidered cap with crescent logo",
     tag: null,
+    image: merchCap,
   },
   {
     name: "Tote Bag",
     price: "$15",
     description: "Perfect for carrying your bazaar finds",
     tag: "New",
-  },
-  {
-    name: "Sticker Pack",
-    price: "$8",
-    description: "Set of 5 festival-themed stickers",
-    tag: null,
-  },
-  {
-    name: "Lanyard",
-    price: "$10",
-    description: "Festival lanyard with detachable clip",
-    tag: null,
+    image: merchTote,
   },
 ];
 
-const MERCH_STORE_URL = "https://socalsuhoorfest.myshopify.com"; // Replace with actual store URL
+const MERCH_STORE_URL = "https://socalsuhoorfest.myshopify.com";
 
 const Merch = () => {
   return (
@@ -84,15 +81,19 @@ const Merch = () => {
         {/* Merch Grid */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
               {merchItems.map((item, index) => (
                 <div
                   key={index}
                   className="bg-card/60 border border-border/50 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300 group"
                 >
-                  {/* Image Placeholder */}
-                  <div className="aspect-square bg-secondary/30 flex items-center justify-center relative">
-                    <ShoppingBag className="w-16 h-16 text-muted-foreground/30" />
+                  {/* Image */}
+                  <div className="aspect-square bg-secondary/30 relative overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                     {item.tag && (
                       <span className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
                         {item.tag}
@@ -112,14 +113,6 @@ const Merch = () => {
                       <span className="text-xl font-display font-bold text-gradient-gold">
                         {item.price}
                       </span>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="opacity-0 group-hover:opacity-100 transition-opacity"
-                        onClick={() => window.open(MERCH_STORE_URL, "_blank")}
-                      >
-                        View
-                      </Button>
                     </div>
                   </div>
                 </div>
