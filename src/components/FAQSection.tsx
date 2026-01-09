@@ -8,35 +8,51 @@ import {
 const faqs = [
   {
     question: "What are the festival dates and hours?",
-    answer: "The SoCal Suhoor Festival runs for 3 nights: February 20, February 27, and March 6, 2026. Each night runs from 10:00 PM to 4:00 AM.",
+    answer: "The festival takes place on February 20, February 27, and March 6, from 10PM-4AM each night.",
   },
   {
     question: "Is this event family-friendly?",
-    answer: "Absolutely! This is a family-friendly event welcoming all ages. There's something for everyone – from kids enjoying treats to adults shopping and socializing.",
+    answer: "Yes! The festival is open to all ages. Families, kids, and groups are all welcome.",
   },
   {
     question: "Is this a religious event?",
-    answer: "While the festival is held during Ramadan and celebrates the spirit of suhoor (the pre-dawn meal), it's a community festival open to everyone regardless of religious background.",
+    answer: "No. While the timing aligns with the Ramadan season, the festival is a cultural night market experience open to everyone, regardless of background or belief. It's an opportunity for the community to gather and find a safe space to fulfill any cravings or do some shopping.",
   },
   {
     question: "Will there be parking?",
-    answer: "Yes, parking is available at Santa Ana Stadium. We recommend arriving early as spaces fill up quickly.",
+    answer: "Yes, there will be on-site or nearby parking. Details will be posted on our Instagram as we get closer to the event date.",
+  },
+  {
+    question: "Will there be restrooms available?",
+    answer: "Yes. The venue will have clean, accessible restrooms available throughout the festival.",
   },
   {
     question: "Are tickets sold at the door?",
-    answer: "We strongly recommend purchasing tickets online in advance. Door tickets may be available but are subject to capacity.",
+    answer: "If capacity allows, limited tickets may be available at the door. We strongly recommend buying online to secure your spot.",
   },
   {
     question: "What kind of vendors will be there?",
-    answer: "We have 40+ food vendors offering diverse cuisines including pizzas, tacos, shawarma, boba, desserts, and much more. Plus 30+ bazaar vendors with clothing, accessories, art, fragrances, and local small businesses.",
+    answer: "You'll find top food vendors, specialty drinks, desserts, and a bazaar with clothing, accessories, art, fragrances, gifts, and small businesses from all over SoCal. All meat served by participating food vendors will be halal.",
+  },
+  {
+    question: "Are pets allowed?",
+    answer: "Service animals are welcome. Other pets are prohibited.",
+  },
+  {
+    question: "Will there be seating available?",
+    answer: "Yes, there will be designated seating areas for attendees to relax and enjoy their food.",
   },
   {
     question: "Do kids need tickets?",
-    answer: "Children under 5 years old enter free. All others require a ticket.",
+    answer: "Kids under 5 get in free. Anyone 5 and up will need a ticket for entry.",
+  },
+  {
+    question: "Where do ticket proceeds go?",
+    answer: "A portion of all ticket sales is donated to our partnered charities. Your attendance helps support community programs and local causes.",
   },
   {
     question: "Do I need a ticket for each night?",
-    answer: "Yes, unless you purchase the 3-Day Pass which grants entry to all 3 nights. Single night tickets are valid for one night only.",
+    answer: "Yes. Tickets are sold per night, so attendees can choose one, two, or all three nights to attend.",
   },
 ];
 
