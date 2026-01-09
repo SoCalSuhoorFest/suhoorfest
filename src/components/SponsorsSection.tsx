@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import californiaSmileLogo from "@/assets/sponsors/california-smile.webp";
 import cairCaliforniaLogo from "@/assets/sponsors/cair-california.svg";
 import islamicReliefLogo from "@/assets/sponsors/islamic-relief.png";
@@ -20,21 +21,33 @@ const SponsorsSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-12">
-            <p className="text-primary font-medium mb-4 tracking-wide uppercase text-sm">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="text-primary font-medium mb-4 tracking-widest uppercase text-xs">
               Our Partners
             </p>
-            <h2 className="text-3xl md:text-4xl font-display font-bold">
+            <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight">
               Proudly Sponsored By
             </h2>
-          </div>
+          </motion.div>
 
           {/* Sponsors */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             {sponsors.map((sponsor, index) => (
               <div
                 key={index}
-                className="bg-background border border-border rounded-xl p-4 flex items-center justify-center min-h-[100px] hover:border-primary/30 transition-colors"
+                className="bg-background border border-border rounded-xl p-4 flex items-center justify-center min-h-[100px] hover:border-primary/30 transition-colors duration-200"
               >
                 <img
                   src={sponsor.logo}
@@ -43,14 +56,20 @@ const SponsorsSection = () => {
                 />
               </div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Charity Note */}
-          <div className="mt-12 text-center">
+          <motion.div 
+            className="mt-12 text-center"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             <p className="text-muted-foreground text-sm max-w-2xl mx-auto">
               A portion of all ticket sales supports our charity partners. Thank you to our sponsors for making this event possible.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
