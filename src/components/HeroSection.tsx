@@ -24,16 +24,15 @@ const HeroSection = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-20 container mx-auto px-4 pt-24 pb-16">
+      <div className="relative z-20 container mx-auto px-4 pt-24 pb-16 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Logo & Badge */}
-          <div className="flex items-center gap-4 mb-8">
+          <div className="flex justify-center mb-8">
             <img
               src={logo}
               alt="SoCal Suhoor Fest"
               className="w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-primary/40"
             />
-            <div className="h-px flex-1 bg-gradient-to-r from-primary/50 to-transparent" />
           </div>
 
           {/* Main Title */}
@@ -43,26 +42,26 @@ const HeroSection = () => {
           </h1>
 
           {/* Tagline */}
-          <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-xl font-light">
+          <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-xl mx-auto font-light">
             Southern California's biggest late-night festival. Three nights of food, culture & community.
           </p>
 
           {/* Event Details - Clean List */}
-          <div className="flex flex-col sm:flex-row gap-6 mb-10 text-sm md:text-base">
-            <div className="flex items-center gap-3">
+          <div className="flex flex-col sm:flex-row justify-center gap-6 mb-10 text-sm md:text-base">
+            <div className="flex items-center justify-center gap-3">
               <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                 <Clock className="w-5 h-5 text-primary" />
               </div>
-              <div>
+              <div className="text-left">
                 <p className="font-semibold text-foreground">Feb 20, 27 & Mar 6</p>
                 <p className="text-muted-foreground text-sm">10PM – 4AM</p>
               </div>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center gap-3">
               <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                 <MapPin className="w-5 h-5 text-primary" />
               </div>
-              <div>
+              <div className="text-left">
                 <p className="font-semibold text-foreground">Santa Ana Stadium</p>
                 <p className="text-muted-foreground text-sm">602 N Flower St</p>
               </div>
@@ -70,7 +69,7 @@ const HeroSection = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button
               size="lg"
               className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold px-8 h-14 text-base"
