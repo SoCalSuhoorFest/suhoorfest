@@ -1,17 +1,11 @@
-import californiaSmileLogo from "@/assets/sponsors/california-smile.webp";
-import cairCaliforniaLogo from "@/assets/sponsors/cair-california.svg";
-import islamicReliefLogo from "@/assets/sponsors/islamic-relief.webp";
-import assurixsLogo from "@/assets/sponsors/assurixs.webp";
-import pennyAppealLogo from "@/assets/sponsors/penny-appeal.png";
-import syrianForumLogo from "@/assets/sponsors/syrian-forum.jpg";
+import islamicReliefLogo from "@/assets/sponsors/islamic-relief.png";
+import pennyAppealLogo from "@/assets/sponsors/penny-appeal.jpg";
+import syrianForumLogo from "@/assets/sponsors/syrian-forum.png";
 
 const sponsors = [
-  { name: "California Smile Dental Group", logo: californiaSmileLogo },
-  { name: "CAIR California", logo: cairCaliforniaLogo },
-  { name: "Assurixs Insurance", logo: assurixsLogo },
-  { name: "Syrian Forum USA", logo: syrianForumLogo },
+  { name: "Islamic Relief USA", logo: islamicReliefLogo },
   { name: "Penny Appeal USA", logo: pennyAppealLogo },
-  { name: "Islamic Relief", logo: islamicReliefLogo },
+  { name: "Syrian Forum USA", logo: syrianForumLogo },
 ];
 
 const SponsorsSection = () => {
@@ -30,7 +24,7 @@ const SponsorsSection = () => {
           </div>
 
           {/* Sponsors */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {sponsors.map((sponsor, index) => (
               <div
                 key={index}
