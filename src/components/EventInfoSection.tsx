@@ -52,7 +52,7 @@ const EventInfoSection = () => {
           <div className="grid md:grid-cols-2 gap-6 mb-12">
             {/* Location */}
             <div className="bg-card border border-border rounded-2xl p-6 md:p-8">
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 mb-6">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-6 h-6 text-primary" />
                 </div>
@@ -69,6 +69,21 @@ const EventInfoSection = () => {
                     Get Directions <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>
+              </div>
+              
+              {/* Google Maps Embed */}
+              <div className="rounded-xl overflow-hidden border border-border">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3315.5!2d-117.8683!3d33.7525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcd9e3a0b0a0a1%3A0x0!2sSanta%20Ana%20Stadium%2C%20602%20N%20Flower%20St%2C%20Santa%20Ana%2C%20CA%2092703!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                  width="100%"
+                  height="200"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Santa Ana Stadium Location"
+                  className="grayscale hover:grayscale-0 transition-all duration-300"
+                />
               </div>
             </div>
 
