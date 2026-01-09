@@ -1,4 +1,4 @@
-import { Moon, Users, Heart, Star } from "lucide-react";
+import { Moon, Users, Heart, Star, Utensils, ShoppingBag } from "lucide-react";
 
 const AboutSection = () => {
   return (
@@ -18,67 +18,57 @@ const AboutSection = () => {
             <Star className="w-5 h-5 text-primary fill-primary" />
           </div>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-            A Night of <span className="text-gradient-gold">Community</span> &{" "}
-            <span className="text-gradient-gold">Celebration</span>
+            3 Nights of <span className="text-gradient-gold">Community</span> &{" "}
+            <span className="text-gradient-gold">Connection</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             The SoCal Suhoor Fest brings together families and friends under the
             stars for the blessed pre-dawn meal. Experience the warmth of
             Islamic hospitality with halal food, entertainment, shopping, and
-            community connection.
+            community connection. Each night features a different vendor lineup, so there's always something new to discover.
           </p>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
           <div className="text-center p-6 bg-card/50 rounded-2xl border border-primary/10 hover:border-primary/30 transition-all duration-300">
-            <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Users className="w-7 h-7 text-primary" />
+            <div className="w-12 h-12 md:w-14 md:h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Utensils className="w-6 h-6 md:w-7 md:h-7 text-primary" />
             </div>
-            <div className="text-3xl md:text-4xl font-display font-bold text-gradient-gold mb-2">
-              10K+
+            <div className="text-2xl md:text-4xl font-display font-bold text-gradient-gold mb-2">
+              40+
             </div>
-            <p className="text-muted-foreground text-sm">Attendees</p>
+            <p className="text-muted-foreground text-xs md:text-sm">Food Vendors</p>
           </div>
 
           <div className="text-center p-6 bg-card/50 rounded-2xl border border-primary/10 hover:border-primary/30 transition-all duration-300">
-            <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg
-                className="w-7 h-7 text-primary"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                <path d="M2 17l10 5 10-5" />
-                <path d="M2 12l10 5 10-5" />
-              </svg>
+            <div className="w-12 h-12 md:w-14 md:h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <ShoppingBag className="w-6 h-6 md:w-7 md:h-7 text-primary" />
             </div>
-            <div className="text-3xl md:text-4xl font-display font-bold text-gradient-gold mb-2">
-              50+
+            <div className="text-2xl md:text-4xl font-display font-bold text-gradient-gold mb-2">
+              30+
             </div>
-            <p className="text-muted-foreground text-sm">Food Vendors</p>
+            <p className="text-muted-foreground text-xs md:text-sm">Bazaar Vendors</p>
           </div>
 
           <div className="text-center p-6 bg-card/50 rounded-2xl border border-primary/10 hover:border-primary/30 transition-all duration-300">
-            <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Moon className="w-7 h-7 text-primary" />
+            <div className="w-12 h-12 md:w-14 md:h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Moon className="w-6 h-6 md:w-7 md:h-7 text-primary" />
             </div>
-            <div className="text-3xl md:text-4xl font-display font-bold text-gradient-gold mb-2">
+            <div className="text-2xl md:text-4xl font-display font-bold text-gradient-gold mb-2">
               3
             </div>
-            <p className="text-muted-foreground text-sm">Magical Nights</p>
+            <p className="text-muted-foreground text-xs md:text-sm">Magical Nights</p>
           </div>
 
           <div className="text-center p-6 bg-card/50 rounded-2xl border border-primary/10 hover:border-primary/30 transition-all duration-300">
-            <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Heart className="w-7 h-7 text-primary" />
+            <div className="w-12 h-12 md:w-14 md:h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Heart className="w-6 h-6 md:w-7 md:h-7 text-primary" />
             </div>
-            <div className="text-3xl md:text-4xl font-display font-bold text-gradient-gold mb-2">
-              ∞
+            <div className="text-2xl md:text-4xl font-display font-bold text-gradient-gold mb-2">
+              100%
             </div>
-            <p className="text-muted-foreground text-sm">Memories</p>
+            <p className="text-muted-foreground text-xs md:text-sm">Family Friendly</p>
           </div>
         </div>
       </div>

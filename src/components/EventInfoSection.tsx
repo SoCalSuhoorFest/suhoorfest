@@ -1,5 +1,19 @@
-import { MapPin, Clock, Calendar, Ticket, Star } from "lucide-react";
+import { MapPin, Clock, Calendar, Ticket, Star, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const EVENTBRITE_URL = "https://www.eventbrite.com/e/socal-suhoor-festival-2026-tickets-1977568273942?aff=oddtdtcreator";
+
+const eventDates = [
+  { day: "FRI", date: "20", month: "February" },
+  { day: "FRI", date: "27", month: "February" },
+  { day: "FRI", date: "6", month: "March" },
+];
+
+const ticketTypes = [
+  { name: "General Admission", price: "$12", description: "Entry to the Festival (single night)" },
+  { name: "3-Day Pass", price: "$30", description: "All 3 nights: Feb 20, Feb 27 & Mar 6" },
+  { name: "Suhoor Express Pass", price: "$35+", description: "Priority entry + front-of-line access at vendors" },
+];
 
 const EventInfoSection = () => {
   return (
@@ -29,6 +43,26 @@ const EventInfoSection = () => {
           </h2>
         </div>
 
+        {/* Event Dates */}
+        <div className="max-w-4xl mx-auto mb-12">
+          <h3 className="text-center text-xl font-semibold mb-6 text-foreground">3 Nights of Magic</h3>
+          <div className="grid grid-cols-3 gap-4 md:gap-6">
+            {eventDates.map((event, index) => (
+              <div
+                key={index}
+                className="bg-card/60 border border-primary/20 rounded-2xl p-4 md:p-6 text-center hover:border-primary/50 transition-all duration-300"
+              >
+                <p className="text-xs md:text-sm text-muted-foreground mb-1">{event.month}</p>
+                <p className="text-sm font-medium text-primary">{event.day}</p>
+                <p className="text-3xl md:text-5xl font-display font-bold text-gradient-gold">
+                  {event.date}
+                </p>
+                <p className="text-xs md:text-sm text-muted-foreground mt-2">10:00 PM</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Info Card */}
         <div className="max-w-4xl mx-auto">
           <div className="bg-card/80 backdrop-blur-sm rounded-3xl border border-primary/20 overflow-hidden shadow-2xl">
@@ -38,7 +72,7 @@ const EventInfoSection = () => {
                 Ramadan 2026
               </h3>
               <p className="text-muted-foreground mt-2">
-                Mark your calendars for the biggest suhoor celebration in SoCal
+                Three unforgettable nights of community, food & culture
               </p>
             </div>
 
@@ -52,14 +86,12 @@ const EventInfoSection = () => {
                       <Calendar className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground mb-1">
-                        Date
-                      </h4>
+                      <h4 className="font-semibold text-foreground mb-1">Dates</h4>
                       <p className="text-muted-foreground">
-                        Coming Ramadan 2026
+                        February 20, 27 & March 6, 2026
                       </p>
                       <p className="text-sm text-muted-foreground/70">
-                        Exact date to be announced
+                        Three Friday nights during Ramadan
                       </p>
                     </div>
                   </div>
@@ -69,10 +101,8 @@ const EventInfoSection = () => {
                       <Clock className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground mb-1">
-                        Time
-                      </h4>
-                      <p className="text-muted-foreground">9:00 PM – 4:00 AM</p>
+                      <h4 className="font-semibold text-foreground mb-1">Time</h4>
+                      <p className="text-muted-foreground">10:00 PM – 4:00 AM</p>
                       <p className="text-sm text-muted-foreground/70">
                         Stay for suhoor before Fajr
                       </p>
@@ -87,12 +117,10 @@ const EventInfoSection = () => {
                       <MapPin className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground mb-1">
-                        Location
-                      </h4>
-                      <p className="text-muted-foreground">Anaheim, California</p>
+                      <h4 className="font-semibold text-foreground mb-1">Location</h4>
+                      <p className="text-muted-foreground">Santa Ana Stadium</p>
                       <p className="text-sm text-muted-foreground/70">
-                        Venue details coming soon
+                        602 N Flower St, Santa Ana, CA 92703
                       </p>
                     </div>
                   </div>
@@ -102,28 +130,46 @@ const EventInfoSection = () => {
                       <Ticket className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground mb-1">
-                        Tickets
-                      </h4>
-                      <p className="text-muted-foreground">
-                        Early bird pricing available soon
-                      </p>
+                      <h4 className="font-semibold text-foreground mb-1">Tickets</h4>
+                      <p className="text-muted-foreground">Starting at $12</p>
                       <p className="text-sm text-muted-foreground/70">
-                        Family packages available
+                        3-Day Pass & Express options available
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
 
+              {/* Ticket Types */}
+              <div className="mt-10 grid md:grid-cols-3 gap-4">
+                {ticketTypes.map((ticket, index) => (
+                  <div
+                    key={index}
+                    className="bg-secondary/30 border border-border/50 rounded-xl p-4 text-center hover:border-primary/30 transition-colors"
+                  >
+                    <p className="font-semibold text-foreground mb-1">{ticket.name}</p>
+                    <p className="text-2xl font-display font-bold text-gradient-gold mb-2">
+                      {ticket.price}
+                    </p>
+                    <p className="text-xs text-muted-foreground">{ticket.description}</p>
+                  </div>
+                ))}
+              </div>
+
               {/* CTA */}
               <div className="mt-10 text-center">
-                <Button variant="hero" size="xl" className="w-full sm:w-auto">
+                <Button
+                  variant="hero"
+                  size="xl"
+                  className="w-full sm:w-auto"
+                  onClick={() => window.open(EVENTBRITE_URL, "_blank")}
+                >
                   <Ticket className="w-5 h-5 mr-2" />
-                  Get Early Access
+                  Get Tickets Now
+                  <ExternalLink className="w-4 h-4 ml-2" />
                 </Button>
                 <p className="text-sm text-muted-foreground mt-4">
-                  Be the first to know when tickets go on sale
+                  Secure your spot – tickets selling fast!
                 </p>
               </div>
             </div>

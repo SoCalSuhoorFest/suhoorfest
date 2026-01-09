@@ -4,11 +4,12 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/suhoor-fest-logo.jpg";
 
+const EVENTBRITE_URL = "https://www.eventbrite.com/e/socal-suhoor-festival-2026-tickets-1977568273942?aff=oddtdtcreator";
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +21,8 @@ const Navbar = () => {
 
   const navLinks = [
     { href: "/vendors", label: "Vendors", isAnchor: false },
+    { href: "/volunteer", label: "Volunteer", isAnchor: false },
+    { href: "/merch", label: "Merch", isAnchor: false },
   ];
 
   return (
@@ -69,7 +72,11 @@ const Navbar = () => {
                 </Link>
               )
             )}
-            <Button variant="gold" size="sm">
+            <Button
+              variant="gold"
+              size="sm"
+              onClick={() => window.open(EVENTBRITE_URL, "_blank")}
+            >
               Get Tickets
             </Button>
           </div>
@@ -116,7 +123,11 @@ const Navbar = () => {
                   </Link>
                 )
               )}
-              <Button variant="gold" className="mt-2">
+              <Button
+                variant="gold"
+                className="mt-2"
+                onClick={() => window.open(EVENTBRITE_URL, "_blank")}
+              >
                 Get Tickets
               </Button>
             </div>
