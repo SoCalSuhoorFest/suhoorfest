@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import Vendors from "./pages/Vendors";
+import Volunteer from "./pages/Volunteer";
+import Merch from "./pages/Merch";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,7 +22,8 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/vendors" element={<Vendors />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="/volunteer" element={<Volunteer />} />
+            <Route path="/merch" element={<Merch />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
