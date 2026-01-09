@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Ticket } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/suhoor-fest-logo.jpg";
@@ -20,16 +20,16 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { href: "/vendors", label: "Vendors", isAnchor: false },
-    { href: "/volunteer", label: "Volunteer", isAnchor: false },
-    { href: "/merch", label: "Merch", isAnchor: false },
+    { href: "/vendors", label: "Vendors" },
+    { href: "/volunteer", label: "Volunteer" },
+    { href: "/merch", label: "Merch" },
   ];
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/90 backdrop-blur-lg border-b border-border/50 py-3"
+          ? "bg-background/95 backdrop-blur-md border-b border-border py-3"
           : "bg-transparent py-5"
       }`}
     >
@@ -40,44 +40,35 @@ const Navbar = () => {
             <img
               src={logo}
               alt="SoCal Suhoor Fest"
-              className="w-10 h-10 rounded-full border-2 border-primary/30"
+              className="w-9 h-9 rounded-full"
             />
-            <span className="font-display font-bold text-lg hidden sm:block">
-              <span className="text-primary">SoCal</span> Suhoor Fest
+            <span className="font-display font-bold text-base hidden sm:block">
+              Suhoor Fest
             </span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) =>
-              link.isAnchor ? (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-foreground/80 hover:text-primary transition-colors text-sm font-medium"
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className={`text-sm font-medium transition-colors ${
-                    location.pathname === link.href
-                      ? "text-primary"
-                      : "text-foreground/80 hover:text-primary"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              )
-            )}
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                to={link.href}
+                className={`text-sm font-medium transition-colors ${
+                  location.pathname === link.href
+                    ? "text-primary"
+                    : "text-foreground/70 hover:text-foreground"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
             <Button
-              variant="gold"
               size="sm"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium"
               onClick={() => window.open(EVENTBRITE_URL, "_blank")}
             >
-              Get Tickets
+              <Ticket className="w-4 h-4 mr-1.5" />
+              Tickets
             </Button>
           </div>
 
@@ -86,48 +77,33 @@ const Navbar = () => {
             className="md:hidden text-foreground p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-border/50 pt-4">
-            <div className="flex flex-col gap-4">
-              {navLinks.map((link) =>
-                link.isAnchor ? (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    className="text-foreground/80 hover:text-primary transition-colors font-medium"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {link.label}
-                  </a>
-                ) : (
-                  <Link
-                    key={link.href}
-                    to={link.href}
-                    className={`font-medium transition-colors ${
-                      location.pathname === link.href
-                        ? "text-primary"
-                        : "text-foreground/80 hover:text-primary"
-                    }`}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                )
-              )}
+          <div className="md:hidden mt-4 pb-4 border-t border-border pt-4">
+            <div className="flex flex-col gap-3">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className={`py-2 font-medium transition-colors ${
+                    location.pathname === link.href
+                      ? "text-primary"
+                      : "text-foreground/70"
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
               <Button
-                variant="gold"
-                className="mt-2"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 mt-2"
                 onClick={() => window.open(EVENTBRITE_URL, "_blank")}
               >
+                <Ticket className="w-4 h-4 mr-1.5" />
                 Get Tickets
               </Button>
             </div>

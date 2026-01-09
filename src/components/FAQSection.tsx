@@ -1,4 +1,3 @@
-import { Star } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -24,10 +23,6 @@ const faqs = [
     answer: "Yes, parking is available at Santa Ana Stadium. We recommend arriving early as spaces fill up quickly.",
   },
   {
-    question: "Will there be restrooms available?",
-    answer: "Yes, restrooms will be available throughout the venue.",
-  },
-  {
     question: "Are tickets sold at the door?",
     answer: "We strongly recommend purchasing tickets online in advance. Door tickets may be available but are subject to capacity.",
   },
@@ -36,20 +31,8 @@ const faqs = [
     answer: "We have 40+ food vendors offering diverse cuisines including pizzas, tacos, shawarma, boba, desserts, and much more. Plus 30+ bazaar vendors with clothing, accessories, art, fragrances, and local small businesses.",
   },
   {
-    question: "Are pets allowed?",
-    answer: "For safety and comfort of all attendees, only service animals are permitted.",
-  },
-  {
-    question: "Will there be seating available?",
-    answer: "Limited seating is available. We recommend bringing blankets or portable chairs for your comfort.",
-  },
-  {
     question: "Do kids need tickets?",
     answer: "Children under 5 years old enter free. All others require a ticket.",
-  },
-  {
-    question: "Where do ticket proceeds go?",
-    answer: "A portion of all ticket sales is donated to our charity partners to support community causes.",
   },
   {
     question: "Do I need a ticket for each night?",
@@ -59,35 +42,31 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section id="faq" className="py-20 relative">
+    <section id="faq" className="py-24 md:py-32">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Star className="w-5 h-5 text-primary fill-primary" />
-            <span className="text-primary uppercase tracking-widest text-sm font-medium">
-              FAQ
-            </span>
-            <Star className="w-5 h-5 text-primary fill-primary" />
-          </div>
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            Frequently Asked <span className="text-gradient-gold">Questions</span>
-          </h2>
-        </div>
-
-        {/* FAQ Accordion */}
         <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <p className="text-primary font-medium mb-4 tracking-wide uppercase text-sm">
+              FAQ
+            </p>
+            <h2 className="text-4xl md:text-5xl font-display font-bold">
+              Common Questions
+            </h2>
+          </div>
+
+          {/* Accordion */}
+          <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-card/60 border border-border/50 rounded-xl px-6 data-[state=open]:border-primary/30"
+                className="bg-card border border-border rounded-xl px-6 data-[state=open]:border-primary/40"
               >
-                <AccordionTrigger className="text-left font-medium text-foreground hover:text-primary hover:no-underline py-5">
+                <AccordionTrigger className="text-left font-medium text-foreground hover:text-primary hover:no-underline py-5 text-base">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-5">
+                <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

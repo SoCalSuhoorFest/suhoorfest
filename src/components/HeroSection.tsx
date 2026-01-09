@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Moon, Star, MapPin, Calendar, Clock } from "lucide-react";
+import { Moon, MapPin, Clock, Ticket } from "lucide-react";
 import heroImage from "@/assets/hero-festival.jpg";
 import logo from "@/assets/suhoor-fest-logo.jpg";
 
@@ -12,116 +12,87 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="SoCal Suhoor Fest night festival with string lights and lanterns"
+          alt="SoCal Suhoor Fest night festival"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
-        <div className="absolute inset-0 bg-gradient-radial from-primary/5 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/40" />
       </div>
 
-      {/* Floating Stars */}
-      <div className="absolute inset-0 z-10 pointer-events-none">
-        {[...Array(12)].map((_, i) => (
-          <Star
-            key={i}
-            className="absolute text-primary star-twinkle fill-primary"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 50}%`,
-              animationDelay: `${Math.random() * 2}s`,
-              width: `${12 + Math.random() * 12}px`,
-              height: `${12 + Math.random() * 12}px`,
-              opacity: 0.6,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Floating Lantern/Moon */}
-      <div className="absolute top-20 right-10 md:right-20 z-10 lantern-float">
-        <Moon className="w-16 h-16 md:w-24 md:h-24 text-primary fill-primary/20" />
+      {/* Crescent Moon Accent */}
+      <div className="absolute top-24 right-8 md:right-16 z-10 opacity-20">
+        <Moon className="w-20 h-20 md:w-32 md:h-32 text-primary fill-primary/10" />
       </div>
 
       {/* Main Content */}
-      <div className="relative z-20 container mx-auto px-4 pt-20 pb-12 text-center">
-        {/* Logo */}
-        <div className="mb-6 fade-in-up" style={{ animationDelay: "0.2s" }}>
-          <img
-            src={logo}
-            alt="SoCal Suhoor Fest Logo"
-            className="w-28 h-28 md:w-36 md:h-36 mx-auto rounded-full border-4 border-primary/30 shadow-lg glow-gold"
-          />
-        </div>
-
-        {/* Main Title */}
-        <h1
-          className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-4 fade-in-up"
-          style={{ animationDelay: "0.4s" }}
-        >
-          <span className="text-gradient-gold">SoCal</span>{" "}
-          <span className="text-foreground">Suhoor Fest</span>
-        </h1>
-
-        {/* Tagline */}
-        <p
-          className="text-lg md:text-xl text-muted-foreground mb-6 max-w-2xl mx-auto fade-in-up font-light"
-          style={{ animationDelay: "0.5s" }}
-        >
-          Southern California's Biggest Suhoor Festival
-        </p>
-
-        {/* Date Badges */}
-        <div
-          className="flex flex-wrap justify-center gap-3 mb-6 fade-in-up"
-          style={{ animationDelay: "0.55s" }}
-        >
-          <div className="bg-primary/20 border border-primary/40 px-4 py-2 rounded-full">
-            <span className="text-primary font-semibold text-sm md:text-base">FEB 20</span>
+      <div className="relative z-20 container mx-auto px-4 pt-24 pb-16">
+        <div className="max-w-4xl mx-auto">
+          {/* Logo & Badge */}
+          <div className="flex items-center gap-4 mb-8">
+            <img
+              src={logo}
+              alt="SoCal Suhoor Fest"
+              className="w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-primary/40"
+            />
+            <div className="h-px flex-1 bg-gradient-to-r from-primary/50 to-transparent" />
           </div>
-          <div className="bg-primary/20 border border-primary/40 px-4 py-2 rounded-full">
-            <span className="text-primary font-semibold text-sm md:text-base">FEB 27</span>
-          </div>
-          <div className="bg-primary/20 border border-primary/40 px-4 py-2 rounded-full">
-            <span className="text-primary font-semibold text-sm md:text-base">MAR 6</span>
-          </div>
-        </div>
 
-        {/* Event Details */}
-        <div
-          className="flex flex-wrap justify-center gap-4 mb-8 fade-in-up"
-          style={{ animationDelay: "0.6s" }}
-        >
-          <div className="flex items-center gap-2 text-foreground/90 bg-secondary/50 px-4 py-2 rounded-full border border-primary/20">
-            <Clock className="w-4 h-4 text-primary" />
-            <span className="font-medium text-sm">10PM – 4AM</span>
-          </div>
-          <div className="flex items-center gap-2 text-foreground/90 bg-secondary/50 px-4 py-2 rounded-full border border-primary/20">
-            <MapPin className="w-4 h-4 text-primary" />
-            <span className="font-medium text-sm">Santa Ana Stadium</span>
-          </div>
-        </div>
+          {/* Main Title */}
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 leading-[0.9]">
+            SoCal<br />
+            <span className="text-primary">Suhoor Fest</span>
+          </h1>
 
-        {/* CTA Buttons */}
-        <div
-          className="flex flex-col sm:flex-row gap-4 justify-center fade-in-up"
-          style={{ animationDelay: "0.7s" }}
-        >
-          <Button
-            variant="hero"
-            size="xl"
-            onClick={() => window.open(EVENTBRITE_URL, "_blank")}
-          >
-            Get Tickets
-          </Button>
-          <Button
-            variant="hero-outline"
-            size="xl"
-            onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
-          >
-            Learn More
-          </Button>
+          {/* Tagline */}
+          <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-xl font-light">
+            Southern California's biggest late-night festival. Three nights of food, culture & community.
+          </p>
+
+          {/* Event Details - Clean List */}
+          <div className="flex flex-col sm:flex-row gap-6 mb-10 text-sm md:text-base">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                <Clock className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <p className="font-semibold text-foreground">Feb 20, 27 & Mar 6</p>
+                <p className="text-muted-foreground text-sm">10PM – 4AM</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                <MapPin className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <p className="font-semibold text-foreground">Santa Ana Stadium</p>
+                <p className="text-muted-foreground text-sm">602 N Flower St</p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button
+              size="lg"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold px-8 h-14 text-base"
+              onClick={() => window.open(EVENTBRITE_URL, "_blank")}
+            >
+              <Ticket className="w-5 h-5 mr-2" />
+              Get Tickets — From $12
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-foreground/20 hover:bg-foreground/5 h-14 text-base"
+              onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+            >
+              Learn More
+            </Button>
+          </div>
         </div>
       </div>
+
+      {/* Bottom Fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
     </section>
   );
 };
