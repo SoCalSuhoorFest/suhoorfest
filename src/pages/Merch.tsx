@@ -58,18 +58,16 @@ const Merch = () => {
 
         {/* Hero */}
         <section className="pt-28 pb-12">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl">
-              <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">
-                Official Gear
-              </p>
-              <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
-                Festival Merch
-              </h1>
-              <p className="text-lg text-muted-foreground max-w-2xl">
-                Rep the fest. Available online and at the event.
-              </p>
-            </div>
+          <div className="container mx-auto px-4 text-center">
+            <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">
+              Official Gear
+            </p>
+            <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
+              Festival Merch
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Rep the fest. Available online and at the event.
+            </p>
           </div>
         </section>
 
