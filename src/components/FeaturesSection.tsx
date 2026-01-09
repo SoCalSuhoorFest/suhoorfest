@@ -1,4 +1,5 @@
 import { Utensils, ShoppingBag, Users, Heart } from "lucide-react";
+import { motion } from "framer-motion";
 
 const features = [
   {
@@ -33,39 +34,49 @@ const FeaturesSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
-            <p className="text-primary font-medium mb-4 tracking-wide uppercase text-sm">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="text-primary font-medium mb-4 tracking-widest uppercase text-xs">
               What to Expect
             </p>
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 tracking-tight">
               More than just a night market
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-base max-w-xl mx-auto">
               Four reasons why this is SoCal's most anticipated Ramadan event.
             </p>
-          </div>
+          </motion.div>
 
           {/* Features Grid */}
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid md:grid-cols-2 gap-5">
             {features.map((feature, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="bg-background border border-border rounded-2xl p-8 hover:border-primary/30 transition-colors duration-300"
+                className="bg-background border border-border rounded-2xl p-8 hover:border-primary/30 transition-all duration-300 group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div className="flex items-start gap-5">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/15 transition-colors">
+                    <feature.icon className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-display font-semibold mb-2 text-foreground">
+                    <h3 className="text-lg font-display font-semibold mb-2 text-foreground tracking-tight">
                       {feature.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground text-sm leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
