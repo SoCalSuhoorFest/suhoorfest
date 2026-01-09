@@ -1,27 +1,29 @@
 import { Helmet } from "react-helmet-async";
-import { Utensils, ShoppingBag, Star, ChefHat, Sparkles, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { Utensils, ShoppingBag, Star, ExternalLink } from "lucide-react";
+
+const EVENTBRITE_URL = "https://www.eventbrite.com/e/socal-suhoor-festival-2026-tickets-1977568273942?aff=oddtdtcreator";
 
 const foodVendors = [
-  { name: "Philly Halal Steaks", cuisine: "American", specialty: "Cheesesteaks & Hoagies" },
-  { name: "Jollof House", cuisine: "West African", specialty: "Jollof Rice & Suya" },
-  { name: "Boba Bliss", cuisine: "Taiwanese", specialty: "Bubble Tea & Desserts" },
-  { name: "Birria Bros", cuisine: "Mexican", specialty: "Birria Tacos & Quesadillas" },
-  { name: "Kabob Corner", cuisine: "Middle Eastern", specialty: "Kebabs & Shawarma" },
-  { name: "Curry House", cuisine: "South Asian", specialty: "Biryani & Curries" },
-  { name: "Sweet Delights", cuisine: "Desserts", specialty: "Baklava & Kunafa" },
-  { name: "Falafel King", cuisine: "Mediterranean", specialty: "Falafel & Hummus" },
+  "Big Al's Pizzeria", "Burger 3000", "Cedar Tacos", "Fatimas Grill", "Firefly Burger",
+  "Frites-Freak", "Fresh Pizza on Wheels", "Kabobaholic", "Keriko Pollos Y Tacos",
+  "La Familia Tacos", "Lekker Kitchen", "Mi Hibatchi", "Shawarma Day", "Shawarma House",
+  "Shawarma Loca", "Slicers Cheesesteaks", "Street Tawa BBQ", "The Red Bird Hot Chicken",
+  "Wingman Wings", "World Famous Grill", "Babylon Brews", "Chai Society", "Coastal Cane",
+  "Cook's Corner Coffee", "Falahisips", "Moonlight Mocktails", "Qamaria Yemeni Coffee Co.",
+  "Toastique", "Yuka Boba", "Beignets du Monde", "Choco Bite", "Crumbl", "Knafeh Queen",
+  "Kornerknafeh", "Kunafeh Time", "Le Cafe du Parc", "Mon Arroza", "Wetzel's Pretzels"
 ];
 
-const bazaarCategories = [
-  { name: "Traditional Clothing", description: "Abayas, thobes, hijabs, and cultural attire" },
-  { name: "Handcrafted Jewelry", description: "Unique pieces from local artisans" },
-  { name: "Islamic Art & Decor", description: "Calligraphy, wall art, and home decor" },
-  { name: "Books & Media", description: "Islamic literature and educational materials" },
-  { name: "Fragrances & Oils", description: "Attar, oud, and traditional perfumes" },
-  { name: "Kids Corner", description: "Islamic toys, games, and children's books" },
+const bazaarVendors = [
+  "Crinkles and Crackles LLC", "Desserts 'N Stuff", "Diamantescarves", "Dokan Everything",
+  "Farwa Family by Basel", "Fuzedbyla", "HeadzUp Barbershop", "Jerusalem Roastery",
+  "Jiyd Jewels", "Lux Chocolate Bars", "Modest Forever", "Otantik Queen", "Palette of Palestine",
+  "Palestinian Tatreez", "Safr Apparel", "Salaam Gallery", "Sheefa Honey", "Shai's Sweets",
+  "Sofa's Fashion", "Sukoon Candles", "Supreme Beef Jerkey", "Syk's Desserts",
+  "Top Style California", "Tursh", "United by Threadz"
 ];
 
 const Vendors = () => {
@@ -31,138 +33,112 @@ const Vendors = () => {
         <title>Vendors | SoCal Suhoor Fest 2026</title>
         <meta
           name="description"
-          content="Explore 50+ halal food vendors and bazaar stalls at SoCal Suhoor Fest. From global cuisines to handcrafted goods, discover what awaits you."
+          content="Explore 40+ halal food vendors and 30+ bazaar vendors at SoCal Suhoor Fest. From shawarma to boba, clothing to art – discover the best of SoCal's Muslim-owned businesses."
         />
       </Helmet>
 
       <div className="min-h-screen bg-background text-foreground">
         <Navbar />
-        
-        <main className="pt-24">
-          {/* Hero Section */}
-          <section className="py-16 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-radial from-primary/10 via-transparent to-transparent" />
-            <div className="container mx-auto px-4 text-center relative z-10">
+
+        {/* Hero Section */}
+        <section className="pt-28 pb-16 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-radial from-primary/5 via-transparent to-transparent" />
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center">
               <div className="flex items-center justify-center gap-2 mb-4">
                 <Star className="w-5 h-5 text-primary fill-primary" />
                 <span className="text-primary uppercase tracking-widest text-sm font-medium">
-                  Our Vendors
+                  2026 Lineup
                 </span>
                 <Star className="w-5 h-5 text-primary fill-primary" />
               </div>
               <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
-                <span className="text-gradient-gold">Taste</span> & <span className="text-gradient-gold">Shop</span>
+                Our <span className="text-gradient-gold">Vendors</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                From mouthwatering halal cuisines to unique handcrafted treasures, 
-                our vendors bring the best of the community together.
+                Each night features a different vendor lineup, so there's always something new to try and discover.
               </p>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Food Vendors Section */}
-          <section className="py-16 relative">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-            
-            <div className="container mx-auto px-4">
-              <div className="flex items-center gap-4 mb-10">
-                <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center">
-                  <Utensils className="w-7 h-7 text-white" />
-                </div>
-                <div>
-                  <h2 className="text-3xl md:text-4xl font-display font-bold">
-                    Food <span className="text-gradient-gold">Vendors</span>
-                  </h2>
-                  <p className="text-muted-foreground">50+ halal vendors from around the world</p>
-                </div>
+        {/* Food Vendors */}
+        <section className="py-16 relative">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center">
+                <Utensils className="w-6 h-6 text-white" />
               </div>
-
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {foodVendors.map((vendor, index) => (
-                  <div
-                    key={vendor.name}
-                    className="group p-6 bg-card/60 backdrop-blur-sm rounded-2xl border border-border/50 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
-                  >
-                    <div className="flex items-center gap-3 mb-4">
-                      <ChefHat className="w-5 h-5 text-primary" />
-                      <span className="text-xs uppercase tracking-wider text-primary font-medium">
-                        {vendor.cuisine}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-display font-semibold mb-2 text-foreground group-hover:text-primary transition-colors">
-                      {vendor.name}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">{vendor.specialty}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-10 text-center">
-                <p className="text-muted-foreground mb-4">
-                  And many more vendors to be announced...
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* Bazaar Section */}
-          <section className="py-16 bg-gradient-to-b from-transparent via-secondary/30 to-transparent relative">
-            <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
-            
-            <div className="container mx-auto px-4">
-              <div className="flex items-center gap-4 mb-10">
-                <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center">
-                  <ShoppingBag className="w-7 h-7 text-white" />
-                </div>
-                <div>
-                  <h2 className="text-3xl md:text-4xl font-display font-bold">
-                    The <span className="text-gradient-gold">Bazaar</span>
-                  </h2>
-                  <p className="text-muted-foreground">Unique finds & handcrafted treasures</p>
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {bazaarCategories.map((category, index) => (
-                  <div
-                    key={category.name}
-                    className="group p-6 bg-card/60 backdrop-blur-sm rounded-2xl border border-border/50 hover:border-primary/40 transition-all duration-300"
-                  >
-                    <div className="flex items-center gap-2 mb-3">
-                      <Sparkles className="w-4 h-4 text-primary" />
-                    </div>
-                    <h3 className="text-xl font-display font-semibold mb-2 text-foreground group-hover:text-primary transition-colors">
-                      {category.name}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">{category.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Become a Vendor CTA */}
-          <section className="py-20 relative">
-            <div className="container mx-auto px-4">
-              <div className="max-w-3xl mx-auto text-center bg-card/80 backdrop-blur-sm rounded-3xl border border-primary/20 p-10 md:p-14">
-                <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-                  Want to be a <span className="text-gradient-gold">Vendor</span>?
+              <div>
+                <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground">
+                  Food, Drink & Dessert
                 </h2>
-                <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                  Join SoCal's biggest Ramadan festival! We're looking for halal food vendors, 
-                  artisans, and businesses to be part of Suhoor Fest 2026.
-                </p>
-                <Button variant="hero" size="xl">
-                  Apply Now
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-                <p className="text-sm text-muted-foreground mt-6">
-                  Applications open soon. Get notified when we start accepting vendors.
-                </p>
+                <p className="text-muted-foreground text-sm">40+ halal vendors</p>
               </div>
             </div>
-          </section>
-        </main>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+              {foodVendors.map((vendor, index) => (
+                <div
+                  key={index}
+                  className="bg-card/60 border border-border/50 rounded-xl p-4 text-center hover:border-primary/30 hover:bg-card/80 transition-all duration-300"
+                >
+                  <p className="text-sm font-medium text-foreground">{vendor}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Bazaar Vendors */}
+        <section className="py-16 relative bg-secondary/10">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center">
+                <ShoppingBag className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground">
+                  Bazaar
+                </h2>
+                <p className="text-muted-foreground text-sm">Clothing, accessories, art, fragrances & more</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+              {bazaarVendors.map((vendor, index) => (
+                <div
+                  key={index}
+                  className="bg-card/60 border border-border/50 rounded-xl p-4 text-center hover:border-primary/30 hover:bg-card/80 transition-all duration-300"
+                >
+                  <p className="text-sm font-medium text-foreground">{vendor}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Become a Vendor CTA */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center bg-card/60 border border-primary/20 rounded-3xl p-8 md:p-12">
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+                Want to <span className="text-gradient-gold">Be a Vendor</span>?
+              </h2>
+              <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+                Join SoCal's biggest suhoor festival. Connect with thousands of attendees across 3 incredible nights.
+              </p>
+              <Button
+                variant="hero"
+                size="lg"
+                onClick={() => window.open("mailto:vendors@socalsuhoorfest.com", "_blank")}
+              >
+                Apply to Vend
+                <ExternalLink className="w-4 h-4 ml-2" />
+              </Button>
+            </div>
+          </div>
+        </section>
 
         <Footer />
       </div>
