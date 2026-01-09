@@ -1,10 +1,17 @@
+import californiaSmileLogo from "@/assets/sponsors/california-smile.webp";
+import cairCaliforniaLogo from "@/assets/sponsors/cair-california.svg";
+import islamicReliefLogo from "@/assets/sponsors/islamic-relief.webp";
+import assurixsLogo from "@/assets/sponsors/assurixs.webp";
+import pennyAppealLogo from "@/assets/sponsors/penny-appeal.png";
+import syrianForumLogo from "@/assets/sponsors/syrian-forum.jpg";
+
 const sponsors = [
-  { name: "California Smile Dental Group" },
-  { name: "CAIR California" },
-  { name: "Assurixs Insurance" },
-  { name: "Syrian Forum USA" },
-  { name: "Penny Appeal USA" },
-  { name: "Islamic Relief" },
+  { name: "California Smile Dental Group", logo: californiaSmileLogo },
+  { name: "CAIR California", logo: cairCaliforniaLogo },
+  { name: "Assurixs Insurance", logo: assurixsLogo },
+  { name: "Syrian Forum USA", logo: syrianForumLogo },
+  { name: "Penny Appeal USA", logo: pennyAppealLogo },
+  { name: "Islamic Relief", logo: islamicReliefLogo },
 ];
 
 const SponsorsSection = () => {
@@ -27,11 +34,13 @@ const SponsorsSection = () => {
             {sponsors.map((sponsor, index) => (
               <div
                 key={index}
-                className="bg-background border border-border rounded-xl p-4 flex items-center justify-center min-h-[80px] hover:border-primary/30 transition-colors"
+                className="bg-background border border-border rounded-xl p-4 flex items-center justify-center min-h-[100px] hover:border-primary/30 transition-colors"
               >
-                <p className="text-sm font-medium text-center text-foreground/80">
-                  {sponsor.name}
-                </p>
+                <img
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  className="max-h-16 max-w-full object-contain"
+                />
               </div>
             ))}
           </div>
