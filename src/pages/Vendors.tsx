@@ -42,34 +42,30 @@ const Vendors = () => {
 
         {/* Hero */}
         <section className="pt-28 pb-12">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl">
-              <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">
-                2026 Lineup
-              </p>
-              <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
-                Our Vendors
-              </h1>
-              <p className="text-lg text-muted-foreground max-w-2xl">
-                Each night features a different lineup. Always something new to discover.
-              </p>
-            </div>
+          <div className="container mx-auto px-4 text-center">
+            <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">
+              2026 Lineup
+            </p>
+            <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
+              Our Vendors
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Each night features a different lineup. Always something new to discover.
+            </p>
           </div>
         </section>
 
         {/* Food Vendors */}
         <section className="py-12">
           <div className="container mx-auto px-4">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+            <div className="text-center mb-8">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
                 <Utensils className="w-5 h-5 text-primary" />
               </div>
-              <div>
-                <h2 className="text-2xl font-display font-bold text-foreground">
-                  Food, Drink & Dessert
-                </h2>
-                <p className="text-muted-foreground text-sm">40+ halal vendors</p>
-              </div>
+              <h2 className="text-2xl font-display font-bold text-foreground">
+                Food, Drink & Dessert
+              </h2>
+              <p className="text-muted-foreground text-sm">40+ halal vendors</p>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
@@ -88,16 +84,14 @@ const Vendors = () => {
         {/* Bazaar Vendors */}
         <section className="py-12 bg-card/30">
           <div className="container mx-auto px-4">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+            <div className="text-center mb-8">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
                 <ShoppingBag className="w-5 h-5 text-primary" />
               </div>
-              <div>
-                <h2 className="text-2xl font-display font-bold text-foreground">
-                  Bazaar
-                </h2>
-                <p className="text-muted-foreground text-sm">Clothing, accessories, art & more</p>
-              </div>
+              <h2 className="text-2xl font-display font-bold text-foreground">
+                Bazaar
+              </h2>
+              <p className="text-muted-foreground text-sm">Clothing, accessories, art & more</p>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">

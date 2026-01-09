@@ -73,12 +73,9 @@ const Footer = () => {
           <div className="h-px bg-border mb-8" />
 
           {/* Bottom */}
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+          <div className="text-center">
             <p className="text-sm text-muted-foreground">
               © 2026 SoCal Suhoor Fest. All rights reserved.
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Made with ♥ for the community
             </p>
           </div>
         </div>
