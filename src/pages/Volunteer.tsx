@@ -31,26 +31,24 @@ const Volunteer = () => {
 
         {/* Hero */}
         <section className="pt-28 pb-12">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl">
-              <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">
-                Join the Team
-              </p>
-              <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
-                Volunteer With Us
-              </h1>
-              <p className="text-lg text-muted-foreground max-w-2xl mb-8">
-                Help create an unforgettable experience for thousands of families. Your time makes this festival possible.
-              </p>
-              <Button
-                size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90"
-                onClick={() => window.open(volunteerFormUrl, "_blank")}
-              >
-                Apply to Volunteer
-                <ExternalLink className="w-4 h-4 ml-2" />
-              </Button>
-            </div>
+          <div className="container mx-auto px-4 text-center">
+            <p className="text-primary font-medium mb-3 tracking-wide uppercase text-sm">
+              Join the Team
+            </p>
+            <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
+              Volunteer With Us
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+              Help create an unforgettable experience for thousands of families. Your time makes this festival possible.
+            </p>
+            <Button
+              size="lg"
+              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              onClick={() => window.open(volunteerFormUrl, "_blank")}
+            >
+              Apply to Volunteer
+              <ExternalLink className="w-4 h-4 ml-2" />
+            </Button>
           </div>
         </section>
 
